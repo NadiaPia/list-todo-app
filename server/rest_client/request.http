@@ -1,0 +1,17 @@
+
+get http://localhost:3003/tasks
+content-Type: application/json
+
+
+###
+
+
+post http://localhost:3003/tasks
+content-Type: application/json
+
+{
+    "taskText": "do party"
+}
+
+
+###
