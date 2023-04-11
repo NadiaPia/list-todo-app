@@ -22,14 +22,18 @@ function Home() {
 
   return (
     <div className='listToDo'>
-      <div className='topSide'>{ <InputField 
+      <div className='topSide'>
+        { <InputField 
           newTask={newTask} 
           setNewTask={setNewTask} 
           listOfTasks={listOfTasks}
           setListOfTasks={setListOfTasks} 
       /> }</div>
+      
       <div className='bottomSide'>
-        { <TasksList listOfTasks={listOfTasks}/> }
+        { <TasksList 
+          listOfTasks={listOfTasks} 
+          setListOfTasks={setListOfTasks}/> }
        
       </div>
 

@@ -10,7 +10,7 @@ function InputField(props) {
       if (response.data.error) {
         alert(response.data.error);
     } else {
-      console.log('');
+      
       props.setListOfTasks([...props.listOfTasks, response.data])
     }
     })
