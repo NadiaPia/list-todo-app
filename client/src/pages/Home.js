@@ -9,8 +9,6 @@ import axios from "axios";
 
 function Home() {
 
-
-
   const [listOfTasks, setListOfTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
 
@@ -30,7 +28,10 @@ function Home() {
           listOfTasks={listOfTasks}
           setListOfTasks={setListOfTasks} 
       /> }</div>
-      <div className='bottomSide'>{ <TasksList listOfTasks={listOfTasks}/> }</div>
+      <div className='bottomSide'>
+        { <TasksList listOfTasks={listOfTasks}/> }
+       
+      </div>
 
     </div>
   )
