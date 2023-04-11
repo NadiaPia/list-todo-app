@@ -12,6 +12,7 @@ function InputField(props) {
     } else {
       
       props.setListOfTasks([...props.listOfTasks, response.data])
+      console.log("response.data", response.data) //{id: 18, taskText: 'qwerty', updatedAt: '2023-04-11T07:59:35.802Z', createdAt: '2023-04-11T07:59:35.802Z'}
       props.setNewTask("") //to make an input field clean after adding a comment
     }
     })
