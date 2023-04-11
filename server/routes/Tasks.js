@@ -8,7 +8,7 @@ router.get("/", async(req, res) => {
     const listOfTasks = await TasksLists.findAll()
     res.json(listOfTasks);
     //console.log("listOfTasks", listOfTasks)
-    //res.json("Successsss")
+   
 });
 
 router.post("/", async(req, res) => {

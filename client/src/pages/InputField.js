@@ -12,6 +12,7 @@ function InputField(props) {
     } else {
       
       props.setListOfTasks([...props.listOfTasks, response.data])
+      props.setNewTask("") //to make an input field clean after adding a comment
     }
     })
   }
@@ -21,6 +22,7 @@ function InputField(props) {
         type="text" 
         placeholder='my next task is....'
         autoComplete='off'
+        value={props.newTask}     //to make an input field clean after adding a comment 
         onChange={(event) => {
           props.setNewTask(event.target.value)
         }

@@ -17,17 +17,14 @@
 
 .topSide {
   flex: 50%;
-  height: calc(100vh - 70px);
-  background-color: aquamarine;
+  height: calc(100vh - 70px);  
   place-items: center;
   display: grid; 
 }
 
 .bottomSide {
   flex: 50%;
-  height: calc(100vh - 70px);
-  background-color: rgb(127, 168, 255); 
-  
+  height: calc(100vh - 70px);  
   place-items: center;
   display: grid;
 
