@@ -18,3 +18,13 @@ content-Type: application/json
 
 delete http://localhost:3003/tasks/2
 content-Type: application/json
+
+###
+
+post http://localhost:3003/auth
+content-Type: application/json
+
+{
+    "username": "nadia",
+    "password": "password"
+}

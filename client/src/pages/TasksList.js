@@ -29,8 +29,6 @@ function TasksList(props) {
             {task.taskText}
             <FontAwesomeIcon icon={faPenToSquare} />
             <FontAwesomeIcon icon={faTrashCan} onClick={() => {deleteTask(task.id)}}/>
-
-
         </div>
       })}
     </div>

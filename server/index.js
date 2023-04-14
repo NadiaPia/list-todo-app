@@ -12,7 +12,10 @@ const db = require("./models");
 //Routers
 
 const tasksRouter = require("./routes/Tasks");
-app.use("/tasks", tasksRouter)
+app.use("/tasks", tasksRouter);
+
+const usersRouter = require("./routes/Users");
+app.use("/auth", usersRouter)
 
 
 
