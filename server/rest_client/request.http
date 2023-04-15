@@ -28,3 +28,13 @@ content-Type: application/json
     "username": "nadia",
     "password": "password"
 }
+
+###
+
+post http://localhost:3003/auth/login
+content-Type: application/json
+
+{
+    "username": "nadia",
+    "password": "password"
+}

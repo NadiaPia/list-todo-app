@@ -3,6 +3,8 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Registration from "./pages/Registration";
+import Login from "./pages/Login";
+
 
 
 
@@ -13,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={ <Home/> }/>
           <Route path="/registration" exact element={ <Registration/> }/>
-
+          <Route path="/login" exact element={ <Login/> }/>
 
         </Routes>
       </Router>
