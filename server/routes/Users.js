@@ -16,7 +16,7 @@ router.post("/login", async(req,res) => {
     if(!user) {
         res.json({message: "User does not exist"})
     } 
-    res.json({username: user.username, id: user.id}) //if we send 
+    res.json({username: user.username, id: user.id}) //we don't need  sent the rest of the object like {password: 'password', createdAt: '2023-04-14T23:16:07.000Z', updatedAt: '2023-04-14T23:16:07.000Z'}
 })
 
 

@@ -7,8 +7,7 @@ function Navbar(props) {
       <div className="Links">
         <Link to="registration">Registration</Link>
         <Link to="login">Login</Link>
-        <Link to="/">Home Page</Link>
-        
+        <Link to="/">Home Page</Link>       
 
       </div>
       <div>

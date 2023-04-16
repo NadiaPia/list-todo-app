@@ -15,10 +15,14 @@ function Login(props) {
             password: passwordLog
         }).then((response) => {
             console.log("response.data", response.data);
-            //{id: 1, username: 'nadia', password: 'password', createdAt: '2023-04-14T23:16:07.000Z', updatedAt: '2023-04-14T23:16:07.000Z'}
-            //{message: 'User does not exist'}     
-            response.data.message ? props.setLoginStatus(response.data.message) : props.setLoginStatus(response.data) //I need the whole response.dataobject instead of just response.data.username            
-            localStorage.setItem("accesss", response.data.id) //now in our localStorage session we set up the id of the user
+            //{id: 1, username: 'nadia'}
+            //{message: 'User does not exist'}
+              
+            //set up the id of the usrer to the local storage:
+            localStorage.setItem("accesss", response.data.id);                  
+            
+            props.setLoginStatus({username: response.data.username, id:response.data.id, status: true})
+           
             navigate("/")
         }).catch(error => {
             console.log(error)

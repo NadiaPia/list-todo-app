@@ -11,7 +11,7 @@ import Navbar from "./pages/Navbar";
 
 function App() {
 
-  const [loginStatus, setLoginStatus] = useState("");
+  const [loginStatus, setLoginStatus] = useState({username: "", id: 0, status: false});
   
 
   return (
@@ -21,7 +21,14 @@ function App() {
         <Routes>
           <Route path="/" exact element={ <Home/> }/>
           <Route path="/registration" exact element={ <Registration/> }/>
-          <Route path="/login" exact element={ <Login setLoginStatus={setLoginStatus} loginStatus={loginStatus}/> }/>
+          <Route path="/login" exact element={ 
+          <Login 
+          setLoginStatus={setLoginStatus} 
+          loginStatus={loginStatus} 
+          
+          /> 
+          }
+          />
 
         </Routes>
       </Router>
