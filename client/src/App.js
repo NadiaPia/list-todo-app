@@ -11,7 +11,8 @@ import Navbar from "./pages/Navbar";
 
 function App() {
 
-  const [loginStatus, setLoginStatus] = useState("")
+  const [loginStatus, setLoginStatus] = useState("");
+  
 
   return (
     <div className="App">

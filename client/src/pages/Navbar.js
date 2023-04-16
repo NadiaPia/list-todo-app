@@ -12,7 +12,7 @@ function Navbar(props) {
 
       </div>
       <div>
-      <h1>{props.loginStatus}</h1>
+      <h1>{props.loginStatus.username}</h1>
       </div>
     </div>
   )
