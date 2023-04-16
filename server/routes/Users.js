@@ -16,7 +16,7 @@ router.post("/login", async(req,res) => {
     if(!user) {
         res.json({message: "User does not exist"})
     } 
-    res.json(user)
+    res.json({username: user.username, id: user.id}) //if we send 
 })
 
 
