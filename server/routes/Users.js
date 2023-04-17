@@ -26,9 +26,6 @@ router.get("/auth", async (req, res) => {
         res.json({message: "User is not loged in"})
     }
     res.json({username: user.username, id: user.id})
-    
-
-
 })
 
 

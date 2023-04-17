@@ -13,8 +13,8 @@ function Home() {
   const [newTask, setNewTask] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:3003/tasks").then((response) => {
-      setListOfTasks(response.data)      
+    axios.get("http://localhost:3003/tasks", {headers: {userid: localStorage.getItem("accesss")}}).then((response) => {
+      setListOfTasks(response.data)
 
     })
   }, [])

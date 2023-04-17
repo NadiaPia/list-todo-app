@@ -5,6 +5,7 @@ const { TasksLists } = require("../models");
 //    "/tasks" = "/"
 
 router.get("/", async(req, res) => {
+    console.log("req.headers.userid", req.headers.userid)
     const listOfTasks = await TasksLists.findAll()
     res.json(listOfTasks);
     //console.log("listOfTasks", listOfTasks)

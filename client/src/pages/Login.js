@@ -19,7 +19,7 @@ function Login(props) {
             //{message: 'User does not exist'}
 
             //set up the id of the usrer to the local storage:
-            localStorage.setItem("accesss", response.data.id);                  
+            localStorage.setItem("accesss", response.data.id);       
             
             props.setLoginStatus({username: response.data.username, id:response.data.id, status: true})
            
