@@ -6,17 +6,20 @@ const { TasksLists } = require("../models");
 
 router.get("/", async(req, res) => {
     console.log("req.headers.userid", req.headers.userid)
-    const listOfTasks = await TasksLists.findAll()
+    const listOfTasks = await TasksLists.findAll({where: {UserId: req.headers.userid}})
     res.json(listOfTasks);
     //console.log("listOfTasks", listOfTasks)
    
 });
 
 router.post("/", async(req, res) => {
-    const newTask = req.body;
+    const newTask = req.body; //{textTask: "eat"}
+    //console.log("req.headers.userid", req.headers.userid) //2
+    newTask.UserId = req.headers.userid; //{textTask: "eat", UserId: 2}
+    console.log("newTask///////////////////////////////////////", newTask)
     const task = await TasksLists.create(newTask)
-    console.log("tasktasktasktasktasktasktask", task) 
-    res.json(task) //{id: 11, taskText: 'water a plant', updatedAt: 2023-04-11T07:32:25.314Z,  createdAt: 2023-04-11T07:32:25.314Z }
+    console.log("task", task) 
+    res.json(task) //{id: 11, taskText: 'water a plant', UserId: '2', updatedAt: 2023-04-11T07:32:25.314Z,  createdAt: 2023-04-11T07:32:25.314Z }
 
 })
 

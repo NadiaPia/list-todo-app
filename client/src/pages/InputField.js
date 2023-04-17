@@ -6,7 +6,7 @@ function InputField(props) {
 
   
   const addTask = () => {
-    axios.post("http://localhost:3003/tasks", {taskText: props.newTask}).then((response) => {
+    axios.post("http://localhost:3003/tasks", {taskText: props.newTask, userid: localStorage.getItem("accesss")}, {headers: {userid: localStorage.getItem("accesss")}}).then((response) => {
       if (response.data.error) {
         alert(response.data.error);
     } else {
