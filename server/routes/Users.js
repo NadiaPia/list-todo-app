@@ -19,5 +19,17 @@ router.post("/login", async(req,res) => {
     res.json({username: user.username, id: user.id}) //we don't need  sent the rest of the object like {password: 'password', createdAt: '2023-04-14T23:16:07.000Z', updatedAt: '2023-04-14T23:16:07.000Z'}
 })
 
+router.get("/auth", async (req, res) => {
+    console.log(req.headers.accesss)
+    const user = await Users.findOne({where: {id: req.headers.accesss}});
+    if(!user) {
+        res.json({message: "User is not loged in"})
+    }
+    res.json({username: user.username, id: user.id})
+    
+
+
+})
+
 
 module.exports = router

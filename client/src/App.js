@@ -1,7 +1,6 @@
 import './App.css';
-import { useState } from 'react';
-
-//import axios from 'axios';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Registration from "./pages/Registration";
@@ -13,6 +12,18 @@ function App() {
 
   const [loginStatus, setLoginStatus] = useState({username: "", id: 0, status: false});
   
+  useEffect(() => {
+    axios.get("http://localhost:3003/auth/auth", {headers: { accesss: localStorage.getItem("accesss"),}})
+    .then((response) => {
+      console.log(response.data)
+      if(response.data.error) {
+        setLoginStatus({...loginStatus, status: false})
+      } else {
+        setLoginStatus({username: response.data.username, id:response.data.id, status: true})
+      }   
+    })
+
+  }, [])  
 
   return (
     <div className="App">
