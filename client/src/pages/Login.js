@@ -15,11 +15,16 @@ function Login(props) {
             password: passwordLog
         }).then((response) => {
             console.log("response.data", response.data);
+            console.log("response.data.message", response.data.message);
+            if(response.data.message) {
+                alert("User does not exist. Go to the registration page!")
+            }
+
             //{id: 1, username: 'nadia'}
             //{message: 'User does not exist'}
 
             //set up the id of the usrer to the local storage:
-            localStorage.setItem("accesss", response.data.id);       
+            localStorage.setItem("accesss", response.data.id);
             
             props.setLoginStatus({username: response.data.username, id:response.data.id, status: true})
            

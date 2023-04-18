@@ -1,9 +1,11 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import React, {useState} from 'react';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+//import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import ShowTask from "./ShowTask";
+
 
 
 
@@ -11,6 +13,7 @@ import axios from 'axios';
 
 function TasksList(props) {  
   let { id } = useParams()
+  const [taskMode, setTaskMode] = useState("show") // show, edit, delete
 
   const deleteTask = (id) => {
     axios.delete(`http://localhost:3003/tasks/${id}` ).then(() => {
@@ -24,15 +27,14 @@ function TasksList(props) {
   return (
     <div>
       {props.listOfTasks.map((task, key) => {
-        return <div key={key} className="task">
-            <input type="checkbox"/>
-            {task.taskText}
-            <FontAwesomeIcon icon={faPenToSquare} />
-            <FontAwesomeIcon icon={faTrashCan} onClick={() => {deleteTask(task.id)}}/>
+        return (
+        <div key={key} className="task">
+          {(taskMode === "show"  && <ShowTask  taskMode={taskMode}  setTaskMode={setTaskMode} task={task}/>)}
         </div>
+        )
       })}
     </div>
   )
 }
 
-export default TasksList
+export default TasksList;
