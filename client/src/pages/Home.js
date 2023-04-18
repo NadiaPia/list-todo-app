@@ -3,12 +3,7 @@ import InputField from "./InputField";
 import TasksList from "./TasksList";
 import axios from "axios";
 
-
-
-
-
 function Home() {
-
   const [listOfTasks, setListOfTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
 
@@ -18,7 +13,6 @@ function Home() {
 
     })
   }, [])
-
 
   return (
     <div className='listToDo'>

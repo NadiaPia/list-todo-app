@@ -1,22 +1,11 @@
-import React, {useState} from 'react';
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
-//import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
-import { useParams } from 'react-router-dom';
+import React from 'react';
 import axios from 'axios';
-
 import Task from "./Task";
-
-
-
-
-
 
 // import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 function TasksList(props) {  
-  //let { id } = useParams()
-  
+  //let { id } = useParams() //we don't use it here as we don't enter inside every task 
 
   const deleteTask = (id) => {
     axios.delete(`http://localhost:3003/tasks/${id}` ).then(() => {
@@ -30,6 +19,7 @@ function TasksList(props) {
   return (
     <div>
       {props.listOfTasks.map((task, key) => {
+        //
         return <Task deleteTask={deleteTask} task={task} key={task.id}/> 
         /*key must be unique and don't change when index of the element an array:
         // [task(id=8...), key(0); task(id=9...), key(1); task(id=10...), key(2)]. 
