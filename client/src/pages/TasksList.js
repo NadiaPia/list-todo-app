@@ -4,7 +4,10 @@ import React, {useState} from 'react';
 //import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import ShowTask from "./ShowTask";
+
+import Task from "./Task";
+
+
 
 
 
@@ -12,8 +15,8 @@ import ShowTask from "./ShowTask";
 // import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 function TasksList(props) {  
-  let { id } = useParams()
-  const [taskMode, setTaskMode] = useState("show") // show, edit, delete
+  //let { id } = useParams()
+  
 
   const deleteTask = (id) => {
     axios.delete(`http://localhost:3003/tasks/${id}` ).then(() => {
@@ -27,11 +30,14 @@ function TasksList(props) {
   return (
     <div>
       {props.listOfTasks.map((task, key) => {
-        return (
-        <div key={key} className="task">
-          {(taskMode === "show"  && <ShowTask  taskMode={taskMode}  setTaskMode={setTaskMode} task={task}/>)}
-        </div>
-        )
+        return <Task deleteTask={deleteTask} task={task} key={task.id}/> 
+        /*key must be unique and don't change when index of the element an array:
+        // [task(id=8...), key(0); task(id=9...), key(1); task(id=10...), key(2)]. 
+        //if we delete the first element of the array task(id=8) => key of the second elemet task(id=9...) will 
+        //change to key(0) instead of key(1). But!!!!
+        //If we make key=task.id  => it will make key stable after delete any elements:
+        //=> [task(id=9...), key(9); task(id=10...), key(10); task(id=13...), key(13)] */
+        
       })}
     </div>
   )
