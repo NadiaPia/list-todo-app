@@ -20,7 +20,7 @@ function InputField(props) {
   return (
     <div>
       <input 
-        type="text" 
+        type="text"
         placeholder='my next task is....'
         autoComplete='off'
         value={props.newTask}     //to make an input field clean after adding a comment 
