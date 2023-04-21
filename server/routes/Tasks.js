@@ -33,4 +33,13 @@ router.delete("/:taskId", async(req, res) => {
     res.json("DELETED SUCCESFULLY")
 })
 
+router.put("/:taskId", async(req, res) => {
+    const taskId = req.params.taskId;
+    console.log(req.body)
+    await TasksLists.update({taskText: req.body.correctedTask}, {where: {id: taskId}});
+    res.json("success");
+    
+    
+})
+
 module.exports = router

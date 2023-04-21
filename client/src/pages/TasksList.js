@@ -14,15 +14,13 @@ function TasksList(props) {
         return val.id !== id;
       }))
     })
-  }
-
-  
+  }  
     
   return (
     <div>
       {props.listOfTasks.map((task, key) => {
         //
-        return <Task deleteTask={deleteTask} task={task} key={task.id} /> 
+        return <Task deleteTask={deleteTask} task={task} key={task.id} refreshTasksList={props.refreshTasksList}/> 
         /*key must be unique and don't change when index of the element an array:
         // [task(id=8...), key(0); task(id=9...), key(1); task(id=10...), key(2)]. 
         //if we delete the first element of the array task(id=8) => key of the second elemet task(id=9...) will 

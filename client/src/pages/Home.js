@@ -7,11 +7,14 @@ function Home() {
   const [listOfTasks, setListOfTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
 
-  useEffect(() => {
+  const refreshTasksList = () => {
     axios.get("http://localhost:3003/tasks", {headers: {userid: localStorage.getItem("accesss")}}).then((response) => {
-      setListOfTasks(response.data)
+    setListOfTasks(response.data)
+  });
+  } 
 
-    })
+  useEffect(() => {
+    refreshTasksList(); //as I need this request in several pages, It better just call it const< but not the whole axios.request
   }, [])
 
   return (
@@ -26,7 +29,8 @@ function Home() {
       
       <div className='bottomSide'>
         { <TasksList 
-          listOfTasks={listOfTasks} 
+          listOfTasks={listOfTasks}
+          refreshTasksList={refreshTasksList} 
           setListOfTasks={setListOfTasks}/> }
        
       </div>
