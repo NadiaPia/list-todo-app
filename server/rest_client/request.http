@@ -38,3 +38,11 @@ content-Type: application/json
     "username": "nadia",
     "password": "password"
 }
+
+###
+put http://localhost:3003/tasks/checkbox/2
+content-Type: application/json
+
+{
+    "checkbox": true   
+}

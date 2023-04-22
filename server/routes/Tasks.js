@@ -38,7 +38,13 @@ router.put("/:taskId", async(req, res) => {
     console.log(req.body)
     await TasksLists.update({taskText: req.body.correctedTask}, {where: {id: taskId}});
     res.json("success");
-    
+});
+
+router.put("/checkbox/:taskId", async(req, res) => {
+    console.log("req.body.checkboxreq.body.checkboxreq.body.checkbox", req.body.checkbox)
+    const taskId = req.params.taskId;
+    await TasksLists.update({checkbox: req.body.checkbox}, {where: {id: taskId}});
+    res.json(req.body.checkbox);
     
 })
 
