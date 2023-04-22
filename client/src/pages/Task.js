@@ -11,7 +11,9 @@ function Task(props) {
     const [taskMode, setTaskMode] = useState("show") // show, edit, delete, checkbox
     const [correctedTask, setCorrectedTask] = useState(props.task.taskText) //this state must be here to be unic for every task.
     //if it live in TasksList it will be common for all tasks
+    //const [ckeckbox, setCheckbox] = useState('false')
 
+    
     const editTask = (id) => {
         axios.put(`http://localhost:3003/tasks/${id}`, {correctedTask: correctedTask}         
         ).then(() => {            
