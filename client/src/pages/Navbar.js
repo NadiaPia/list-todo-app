@@ -5,9 +5,15 @@ function Navbar(props) {
   return (
     <div className="navbar">
       <div className="Links">
-        <Link to="registration">Registration</Link>
-        <Link to="login">Login</Link>
-        <Link to="/">Home Page</Link>       
+        {!props.loginStatus.id? (
+        <>
+          <Link to="registration">Registration</Link>
+          <Link to="login">Login</Link> 
+        </>
+        ) : (
+        <Link to="/">Home Page</Link>
+        )  
+      }  
 
       </div>
       <div>
