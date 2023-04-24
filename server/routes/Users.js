@@ -21,7 +21,7 @@ router.post("/login", async(req,res) => {
 })
 
 router.get("/auth", async (req, res) => {
-    console.log(req.headers.accesss)
+    console.log('REQ ACCESSS --->>> ', req.headers.accesss)
     const user = await Users.findOne({where: {id: req.headers.accesss}});
     if(!user) {
         res.json({message: "User is not loged in"})

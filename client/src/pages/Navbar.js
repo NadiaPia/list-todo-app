@@ -1,23 +1,27 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+
 
 function Navbar(props) {
 
+  const navigate = useNavigate();
+
   const logout = () => {
+    console.log('logout')
     localStorage.removeItem("accesss");
     props.setLoginStatus({username: "", id: null, status: false}) //if id: 0, I have "0" symbol on the username place after logout
+    navigate("/login")
   }
   return (
     <div className="navbar">
       <div className="Links">
-        {!props.loginStatus.id? (
+        {!props.loginStatus.id && (
         <>
           <Link to="registration">Registration</Link>
           <Link to="login">Login</Link> 
         </>
-        ) : (
-        <Link to="/">Home Page</Link>
-        )  
+        ) 
       }  
 
       </div>

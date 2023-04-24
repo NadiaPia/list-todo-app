@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
@@ -11,9 +11,16 @@ import Navbar from "./pages/Navbar";
 function App() {
 
   const [loginStatus, setLoginStatus] = useState({username: "", id: null, status: false});
+  const navigate = useNavigate();
   
+
   useEffect(() => {
-    axios.get("http://localhost:3003/auth/auth", {headers: { accesss: localStorage.getItem("accesss"),}})
+    const accesss = localStorage.getItem("accesss");
+    if (!accesss) {
+      navigate("/registration");
+      return}
+      ;
+    axios.get("http://localhost:3003/auth/auth", {headers: { accesss: accesss }})
     .then((response) => {
       console.log(response.data)
       if(response.data.error) {
@@ -27,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
+      {/* <Router> */} {/*I wrapped up the whole App.js in the index.js to make our useNavigate work*/}
         { <Navbar 
         loginStatus={loginStatus}
         setLoginStatus={setLoginStatus}
@@ -48,7 +55,7 @@ function App() {
           />
 
         </Routes>
-      </Router>
+      {/* </Router> */}
     </div>
   );
 }

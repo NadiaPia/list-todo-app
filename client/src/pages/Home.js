@@ -8,7 +8,10 @@ function Home() {
   const [newTask, setNewTask] = useState("");
 
   const refreshTasksList = () => {
-    axios.get("http://localhost:3003/tasks", {headers: {userid: localStorage.getItem("accesss")}}).then((response) => {
+    const userid = localStorage.getItem("accesss");
+    console.log('REFRESH, uid:', localStorage.getItem("accesss"));
+    //if (!userid) return;
+    axios.get("http://localhost:3003/tasks", {headers: {userid: userid || 'tut pusto', test: 4 }}).then((response) => {
     setListOfTasks(response.data.reverse()) //elements ordered by newest go up
   });
   } 

@@ -5,7 +5,8 @@ const { TasksLists } = require("../models");
 //    "/tasks" = "/"
 
 router.get("/", async(req, res) => {
-    console.log("req.headers.userid", req.headers.userid)
+    //console.log('HEADERS --->>> ', req.headers)
+    console.log("req.headers.userid --->>> ", req.headers.userid)
     const listOfTasks = await TasksLists.findAll({where: {UserId: req.headers.userid}})
     res.json(listOfTasks);
     //console.log("listOfTasks", listOfTasks)
