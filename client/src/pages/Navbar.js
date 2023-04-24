@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+
 
 
 
@@ -25,9 +28,12 @@ function Navbar(props) {
       }  
 
       </div>
-      <div>
-      <h1>{props.loginStatus.username}</h1>
+      <div className="loggedInContainer">
       {props.loginStatus.id && <button onClick={logout}>logout</button>}
+      <div className="userContainer">
+        {props.loginStatus.id && <FontAwesomeIcon icon={faUser} />}
+        <p>{props.loginStatus.username}</p>
+      </div>
       </div>
     </div>
   )
