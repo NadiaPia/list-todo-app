@@ -10,7 +10,7 @@ import Navbar from "./pages/Navbar";
 
 function App() {
 
-  const [loginStatus, setLoginStatus] = useState({username: "", id: 0, status: false});
+  const [loginStatus, setLoginStatus] = useState({username: "", id: null, status: false});
   
   useEffect(() => {
     axios.get("http://localhost:3003/auth/auth", {headers: { accesss: localStorage.getItem("accesss"),}})
@@ -28,10 +28,13 @@ function App() {
   return (
     <div className="App">
       <Router>
-        { <Navbar loginStatus={loginStatus}/> }
+        { <Navbar 
+        loginStatus={loginStatus}
+        setLoginStatus={setLoginStatus}
+        /> }
         <Routes>
           <Route path="/" exact element={ <Home/> }/>
-          
+
           <Route path="/registration" exact element={ 
           <Registration setLoginStatus={setLoginStatus}/> }/>
           
