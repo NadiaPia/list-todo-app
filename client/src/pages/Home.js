@@ -9,7 +9,7 @@ function Home() {
 
   const refreshTasksList = () => {
     axios.get("http://localhost:3003/tasks", {headers: {userid: localStorage.getItem("accesss")}}).then((response) => {
-    setListOfTasks(response.data)
+    setListOfTasks(response.data.reverse()) //elements ordered by newest go up
   });
   } 
 
