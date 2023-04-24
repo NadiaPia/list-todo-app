@@ -23,11 +23,13 @@ function Task(props) {
     }
 
     const activateCheckbox = (id) => {
-        console.log("Checkbox Activated8888888888888888888888888888888888888888888888")
+        //console.log("Checkbox Activated")
         const updatedCheckbox = !checkbox;
-        setCheckbox(updatedCheckbox)
+        setCheckbox(updatedCheckbox) //we cannot do setCheckbox(true) as in React it will run slower,
+        // then axios.put request, but if we do a simple define like const updatedCheckbox = !checkbox it will
+        //be done faster and this value will have time to be transferred to the axios.put request 
         axios.put(`http://localhost:3003/tasks/checkbox/${id}`, {checkbox: updatedCheckbox}).then(() => {
-            console.log("checkbox????????????????")
+            console.log("checkbox??????????????????????????")
         })
     }
 
@@ -40,6 +42,7 @@ function Task(props) {
           task={props.task}
           id={props.task.id}
           activateCheckbox={activateCheckbox}
+          checkbox={checkbox}
           />)}
 
           {(taskMode === "delete" && <DeleteTask

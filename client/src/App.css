@@ -76,3 +76,17 @@
 .registration input {
   padding-left: 10px;
 }
+
+.taskElement {
+  /*background-color: aqua;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 200px;
+  justify-content: space-between;
+}
+
+.activated {  
+  text-decoration: line-through;
+}
+
