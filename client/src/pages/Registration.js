@@ -1,23 +1,31 @@
 import React, { useState } from 'react';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
-function Registration() {
+
+function Registration(props) {
 
     const [usernameReg, setUsernameReg] = useState('');
     const [passwordReg, setPasswordReg] = useState('');
 
+    const navigate = useNavigate();
+
+
     const register = () => {
         axios.post("http://localhost:3003/auth", {
-            username: usernameReg, 
+            username: usernameReg,
             password: passwordReg
         }).then((response) => {
-            console.log("responseresponseresponseresponse", response)
+            console.log("responseresponseresponseresponse", response.data.id)
+            localStorage.setItem("accesss", response.data.id);
+            props.setLoginStatus({username: response.data.username, id:response.data.id, status: true})
+           
+            navigate("/")
         }) .catch(error => {
             console.log(error)
         })
     }
-
 
   return (
     <div className="registration">

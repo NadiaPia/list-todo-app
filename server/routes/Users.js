@@ -6,8 +6,9 @@ const { Users } = require("../models");
 
 router.post("/", async(req,res) => {
     const {username, password} = req.body;
-    await Users.create({username: username, password:password})
-    res.json("Success")
+    const user = await Users.create({username: username, password:password})
+    console.log("user.id", user.id);    
+    res.json({username: user.username, id: user.id})
 })
 
 router.post("/login", async(req,res) => {

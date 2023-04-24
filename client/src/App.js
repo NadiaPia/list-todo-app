@@ -31,7 +31,10 @@ function App() {
         { <Navbar loginStatus={loginStatus}/> }
         <Routes>
           <Route path="/" exact element={ <Home/> }/>
-          <Route path="/registration" exact element={ <Registration/> }/>
+          
+          <Route path="/registration" exact element={ 
+          <Registration setLoginStatus={setLoginStatus}/> }/>
+          
           <Route path="/login" exact element={ 
           <Login 
           setLoginStatus={setLoginStatus} 
