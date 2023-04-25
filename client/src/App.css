@@ -123,16 +123,130 @@
   padding-left: 10px;
 }
 
+
+/*ShowTask     list of tasks*/
+
 .taskElement {
-  /*background-color: aqua;*/
+  /*background-color: aquamarine;*/ 
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 200px;
-  justify-content: space-between;
+  width: 40vw;
+  border-radius: 8px; 
+}
+
+.taskElement:hover {
+  background-color: #9FA975;
 }
 
 .activated {  
   text-decoration: line-through;
 }
+
+.taskElement p { 
+  width: 100%;
+  margin-right: 20px;
+  /*background-color: #631c20;*/
+}
+
+.taskElement input {
+  margin-right: 20px;  
+}
+
+.taskElement .icon {
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+/*DeleteTask-------------------------------------------------------------*/
+
+.deleteTaskElement  {
+   background-color: rgb(236, 156, 156);
+   display: flex;
+   flex-direction: row;
+   align-items: center;   
+   width: 40vw;
+   height: 50px;
+   border-radius: 8px;
+   margin-right: 0;
+
+}
+.deleteTaskElement span {
+  /*background-color: aqua;*/
+  font-weight: bold;
+  width: 60%;
+  margin-left: 100px;  
+  margin-right: 6px;
+}
+
+.deleteTaskElement .icon {
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+
+
+/*EditTask -------------------------------------------------------------*/
+.editTaskElement {
+  /*background-color: aquamarine;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 40vw;
+  height: 50px;
+  border-radius: 8px;
+}
+.editTaskElement:hover {
+  background-color: #9FA975;
+}
+
+.editTaskElement input {
+  width: 75%;
+  margin-left: 35px;
+  margin-right: 35px;
+  outline: none;
+  /*border: none;*/
+  /*background-color: #9FA975;*/
+  height: 2em;
+  border-radius: 8px;
+  border: 2px solid #631c20;
+
+}
+
+.editTaskElement .icon {
+  font-size: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/*taskInputContainer----------------------------------------------------------------*/
+
+.taskInputContainer  {  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+ /* background-color: #631c20;*/
+}
+
+.taskInputContainer input {
+  width: 90%;
+  height: 50px;
+  border-radius: 8px;
+  border: 2px solid #631c20;
+  
+}
+
+.taskInputContainer button {
+  width: 70px;
+  height: 50px;
+  border-radius: 8px;
+  border: 2px solid #631c20;
+}
+
+
 

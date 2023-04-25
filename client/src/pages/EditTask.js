@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import {faSquareCheck}  from '@fortawesome/free-regular-svg-icons';
@@ -10,15 +10,15 @@ import {faXmarkCircle}  from '@fortawesome/free-regular-svg-icons';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 function EditTask(props) {
+  useEffect(() => {
+    document.getElementById("editInput").focus()
+  }, [])
     
   return (
-    <div>
-        
-        
-            <input type="text" value={props.correctedTask} onChange={(event) => {props.setCorrectedTask(event.target.value)}}/> 
-            
-            <FontAwesomeIcon icon={faSquareCheck} onClick={() => {props.editTask(props.id)}}/>
-            <FontAwesomeIcon icon={faXmarkCircle} onClick={()=> props.setTaskMode("show")}/>
+    <div className="editTaskElement">       
+            <input type="text" value={props.correctedTask} id="editInput" onChange={(event) => {props.setCorrectedTask(event.target.value)}}/>            
+            <FontAwesomeIcon icon={faSquareCheck} className="icon" onClick={() => {props.editTask(props.id)}}/>
+            <FontAwesomeIcon icon={faXmarkCircle} className="icon" onClick={()=> props.setTaskMode("show")}/>
       
     </div>
   )

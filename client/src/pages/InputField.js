@@ -16,7 +16,7 @@ function InputField(props) {
     })
   }
   return (
-    <div>
+    <div className="taskInputContainer">
       <input 
         type="text"
         placeholder='my next task is....'

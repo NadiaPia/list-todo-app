@@ -8,8 +8,8 @@ function ShowTask(props) {
     <div className="taskElement">
         <input type="checkbox" onChange={() => props.activateCheckbox(props.id)}/>
             <p className={props.checkbox ? "activated" : ""}>{props.task.taskText}</p>
-            {!props.checkbox && <FontAwesomeIcon icon={faPenToSquare} onClick={() => props.setTaskMode("edit")} className="icon"/>}
             <FontAwesomeIcon icon={faTrashCan} onClick={() => props.setTaskMode("delete")} className="icon"/>
+            {!props.checkbox && <FontAwesomeIcon icon={faPenToSquare} onClick={() => props.setTaskMode("edit")} className="icon"/>}
       
     </div>
   )
