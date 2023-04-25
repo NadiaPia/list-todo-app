@@ -4,7 +4,8 @@ import axios from "axios";
 
 function InputField(props) {  
   const addTask = () => {
-    axios.post("http://localhost:3003/tasks", {taskText: props.newTask, userid: localStorage.getItem("accesss"), checkbox: false}, {headers: {userid: localStorage.getItem("accesss")}}).then((response) => {
+
+    props.newTask && axios.post("http://localhost:3003/tasks", {taskText: props.newTask, userid: localStorage.getItem("accesss"), checkbox: false}, {headers: {userid: localStorage.getItem("accesss")}}).then((response) => {
       if (response.data.error) {
         alert(response.data.error);
     } else {
@@ -27,7 +28,8 @@ function InputField(props) {
         }
         }
       />
-      <button onClick={addTask}>Add Task</button>
+      {/*<button className={props.newTask ? "active" : "notActive"} onClick={addTask}>Add Task</button>*/}
+      {props.newTask ? (<button  onClick={addTask}>Add Task</button>) : (<button  disabled onClick={addTask}>Add Task</button>)}
     </div>
   )
 }
