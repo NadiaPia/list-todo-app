@@ -9,7 +9,7 @@ function Registration(props) {
     const [passwordReg, setPasswordReg] = useState('');
     const navigate = useNavigate();
 
-    const register = () => {
+    const register = () => {        
         axios.post("http://localhost:3003/auth", {
             username: usernameReg,
             password: passwordReg
@@ -28,7 +28,7 @@ function Registration(props) {
             <h1>Registration</h1>
             <input type="text" placeholder="Username" onChange={(e) => { setUsernameReg(e.target.value); }} />
             <input type="text" placeholder="Password" onChange={(e) => { setPasswordReg(e.target.value); }} />
-            <button onClick={register}>Register</button>
+            {(usernameReg &&  passwordReg)? <button onClick={register}>Register</button> : <button disabled  onClick={register}>Register</button>}
         </div>
     );
 }

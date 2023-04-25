@@ -16,8 +16,8 @@ function InputField(props) {
           alert(response.data.error);
         } else {
 
-          props.setListOfTasks([response.data, ...props.listOfTasks]) //[...props.listOfTasks, response.data] elements will not be reverse
-          console.log("response.data", response.data) //{id: 18, taskText: 'qwerty', updatedAt: '2023-04-11T07:59:35.802Z', createdAt: '2023-04-11T07:59:35.802Z'}
+          props.setListOfTasks([response.data, ...props.listOfTasks]); //[...props.listOfTasks, response.data] elements will not be reverse
+          console.log("response.data", response.data); //{id: 18, taskText: 'qwerty', updatedAt: '2023-04-11T07:59:35.802Z', createdAt: '2023-04-11T07:59:35.802Z'}
           props.setNewTask(""); //to make an input field clean after adding a comment
         }
       });

@@ -11,7 +11,7 @@ function EditTask(props) {
 
   return (
     <div className="editTaskElement">
-      <input type="text" value={props.correctedTask} id="editInput" onChange={(event) => { props.setCorrectedTask(event.target.value) }} />
+      <input type="text" value={props.correctedTask} id="editInput" onChange={(event) => props.setCorrectedTask(event.target.value)} />
       <FontAwesomeIcon icon={faSquareCheck} className="icon" onClick={() => { props.editTask(props.id); }} />
       <FontAwesomeIcon icon={faXmarkCircle} className="icon" onClick={() => props.setTaskMode("show")} />
     </div>

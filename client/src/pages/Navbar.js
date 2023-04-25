@@ -39,7 +39,7 @@ function Navbar(props) {
 
 Navbar.propTypes = {
   setLoginStatus: PropTypes.func,
-  loginStatus: PropTypes.func,
+  loginStatus: PropTypes.object,
 
 };
 

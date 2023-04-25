@@ -12,7 +12,7 @@ function Home() {
     console.log('REFRESH, uid:', localStorage.getItem("accesss"));
     //if (!userid) return;
     axios.get("http://localhost:3003/tasks", { headers: { userid: userid || 'tut pusto', test: 4 } }).then((response) => {
-      setListOfTasks(response.data.reverse()) //elements ordered by newest go up
+      setListOfTasks(response.data.reverse()); //elements ordered by newest go up
     });
   };
 
@@ -38,7 +38,7 @@ function Home() {
       </div>
 
     </div>
-  )
+  );
 }
 
 export default Home;

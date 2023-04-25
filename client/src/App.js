@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import { /* BrowserRouter as Router,*/ Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";

@@ -17,7 +17,8 @@ function Login(props) {
         }).then((response) => {
             //console.log("response.data.message", response.data.message);
             if (response.data.message) {
-                alert("User does not exist. Go to the registration page!");
+                alert(response.data.message);
+                navigate("/login");
             }
 
             //{id: 1, username: 'nadia'}
@@ -38,7 +39,7 @@ function Login(props) {
                 <h1>Login</h1>
                 <input type="text" placeholder="Username" onChange={(e) => { setUsernameLog(e.target.value);}} />
                 <input type="text" placeholder="Password" onChange={(e) => { setPasswordLog(e.target.value);}} />
-                <button onClick={login}>Login</button>
+                {(usernameLog &&  passwordLog)? (<button onClick={login}>Login</button>) : (<button disabled onClick={login}>Login</button>)}
             </div>
         </div>
     );

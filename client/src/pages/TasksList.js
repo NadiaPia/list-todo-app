@@ -6,7 +6,7 @@ function TasksList(props) {
   //let { id } = useParams() //we don't use it here as we don't enter inside every task
   const deleteTask = (id) => {
     axios.delete(`http://localhost:3003/tasks/${id}` ).then(() => {
-      console.log(props.listOfTasks)
+      console.log(props.listOfTasks);
       props.setListOfTasks(props.listOfTasks.filter((val) => {
         return val.id !== id;
       }));
@@ -15,7 +15,7 @@ function TasksList(props) {
     
   return (
     <div>
-      {props.listOfTasks.map((task, key) => {
+      {props.listOfTasks.map((task, /*key*/) => {
         //
         return <Task deleteTask={deleteTask} task={task} key={task.id} refreshTasksList={props.refreshTasksList}/>;
         /*key must be unique and don't change when index of the element an array:
