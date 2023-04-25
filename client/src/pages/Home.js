@@ -11,35 +11,34 @@ function Home() {
     const userid = localStorage.getItem("accesss");
     console.log('REFRESH, uid:', localStorage.getItem("accesss"));
     //if (!userid) return;
-    axios.get("http://localhost:3003/tasks", {headers: {userid: userid || 'tut pusto', test: 4 }}).then((response) => {
-    setListOfTasks(response.data.reverse()) //elements ordered by newest go up
-  });
-  } 
+    axios.get("http://localhost:3003/tasks", { headers: { userid: userid || 'tut pusto', test: 4 } }).then((response) => {
+      setListOfTasks(response.data.reverse()) //elements ordered by newest go up
+    });
+  };
 
   useEffect(() => {
     refreshTasksList(); //as I need this request in several pages, It better just call it const< but not the whole axios.request
-  }, [])
+  }, []);
 
   return (
     <div className='listToDo'>
       <div className='topSide'>
-        { <InputField 
-          newTask={newTask} 
-          setNewTask={setNewTask} 
+        {<InputField
+          newTask={newTask}
+          setNewTask={setNewTask}
           listOfTasks={listOfTasks}
-          setListOfTasks={setListOfTasks} 
-      /> }</div>
-      
+          setListOfTasks={setListOfTasks}
+        />}</div>
+
       <div className='bottomSide'>
-        { <TasksList 
+        {<TasksList
           listOfTasks={listOfTasks}
-          refreshTasksList={refreshTasksList} 
-          setListOfTasks={setListOfTasks}/> }
-       
+          refreshTasksList={refreshTasksList}
+          setListOfTasks={setListOfTasks} />}
       </div>
 
     </div>
   )
 }
 
-export default Home
+export default Home;
