@@ -30,7 +30,7 @@ function TasksList(props) {
 }
 
 TasksList.propTypes = {
-  listOfTasks: PropTypes.func,
+  listOfTasks: PropTypes.array,
   setListOfTasks: PropTypes.func,
   refreshTasksList: PropTypes.func,  
 };

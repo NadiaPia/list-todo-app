@@ -45,9 +45,9 @@ function InputField(props) {
 }
 
 InputField.propTypes = {
-  newTask: PropTypes.func,
+  newTask: PropTypes.string,
   setNewTask: PropTypes.func,
-  listOfTasks: PropTypes.func,
+  listOfTasks: PropTypes.array,
   setListOfTasks: PropTypes.func,
 };
 
