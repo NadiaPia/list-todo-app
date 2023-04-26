@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# list-todo-app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+list-todo-app is an application that users can use to create their own list of tasks. This project was build in order to practice basic skills of coding both front-end and back-end.  It was created using React.JS for the front-end, and Node.JS and Express.JS for the back-end, and MySQL for the database.
+
+## Final Product
+
+- ### General view
+Only logged in user can create a list of task:
+
 
 ## Available Scripts
 
