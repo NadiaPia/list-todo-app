@@ -7,70 +7,48 @@ list-todo-app is an application that users can use to create their own list of t
 - ### General view
 Only logged in user can create a list of task:
 
+!["General view"](https://github.com/NadiaPia/list-todo-app/blob/master/screenshots/general-view.png)
 
-## Available Scripts
+- ### Registration and login functionality
+In order to complete the registration process successfully, users must fill in both the username and password fields. Failure to do so will result in an inactive registration button. Similarly, for a successful login, users must input the correct username and password to activate the Login button.
 
-In the project directory, you can run:
+!["Registration and login"](https://github.com/NadiaPia/list-todo-app/blob/master/screenshots/login-registration.png)
+!["Incorrect login"](https://github.com/NadiaPia/list-todo-app/blob/master/screenshots/incorrect-login.png)
 
-### `npm start`
+- ### Edit, Delete and Comleted task functionality
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+!["Edit and Delete"](https://github.com/NadiaPia/list-todo-app/blob/master/screenshots/edit-delete.png)
+!["Completed task"](https://github.com/NadiaPia/list-todo-app/blob/master/screenshots/completed-task.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Dependencies for the Front-end
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   - "@fortawesome/fontawesome-svg-core": "^6.4.0",
+   - "@fortawesome/free-regular-svg-icons": "^6.4.0",
+   - "@fortawesome/free-solid-svg-icons": "^6.4.0",
+   - "@fortawesome/react-fontawesome": "^0.2.0",
+   - "@testing-library/jest-dom": "^5.16.5",
+   - "@testing-library/react": "^13.4.0",
+   - "@testing-library/user-event": "^13.5.0",
+   - "axios": "^1.3.5",
+   - "prop-types": "^15.8.1",
+   - "react": "^18.2.0",
+   - "react-dom": "^18.2.0",
+   - "react-router-dom": "^6.10.0",
+   - "react-scripts": "5.0.1",
+   - "web-vitals": "^2.1.4"
+   
+  ## Dependencies for the Back-end
+  
+   - "cors": "^2.8.5",
+   - "eslint": "^8.39.0",
+   - "express": "^4.18.2",
+   - "mysql2": "^3.2.0",
+   - "nodemon": "^2.0.22",
+   - "sequelize": "^6.31.0",
+   - "sequelize-cli": "^6.6.0"
+  
+## Getting Started
+1. Fork and clone https://github.com/NadiaPia/list-todo-app
+2. Install dependencies: `npm i`
+3. cd to the server directory and run `npm start`
+4. cd to the client directory and run `npm start`
